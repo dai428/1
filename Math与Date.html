@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        1.Math静态属性
+            Math.PI
+            Math.E
+            Math.SQRT2
+            Math.LN2
+        2. Math静态方法
+            1. 绝对值 Math.abs()
+            2. 最大、最小值 
+                Math.max()  Math.min()
+                Math.max.apply(null,[10,20,30])
+                Math.min.apply(null,[10,20,30])
+            3. 取整四件套
+                Math.floor()  向下取整
+                Math.ceil()     向上取整
+                Math.round()    四舍五入
+                Math.trunc()    砍掉小数
+            4. 幂、平方根
+                Math.pow(2,3)   2的3次方、
+                Math.sqrt(4)
+            5. 随机数
+                Math.random()   0<= x <1
+                生成Min-max随机数
+                function getRandom(min,max){
+                return Math.random()*(max-min)+min
+                }
+                生成0-n的随机整数
+                Math.floor(Math.random()*n)
+        3. Math 实战案例
+            1. 圆面积
+            function circleArea(r){
+            return Math.PI*r*r}
+            2.随机颜色
+                function getColor(){
+                let str ='0123456789abcdef'
+                let color = '#'
+                for (let i=0;i<6;i++){
+                let num =Math.floor(Math.random()*str.length)
+                color += str[num]}
+                return color
+                }
+
+    2.Date 对象
+
+            
+        */
+    
+       //编写一个函数，获得一个十六进制的随机颜色的字符串方法
+       function getColor(){
+        var  str ="1234567890abcdef";
+        var color = "#";
+        for(var i=0;i<6;i++){
+            var num=Math.floor(Math.random()*str.length);
+            color = color+str[num];
+        }
+        return color;
+       }
+
+       console.log(getColor());
+
+       //时间戳、日期互相转换
+       function timestampToTime(timestamp){
+        var date = new Date(timestamp);
+        var Y = date.getFullYear()+'-';
+        
+       }
+
+    </script>
+</body>
+</html>
