@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height:500px;
+        }
+        #backToTop{
+            width:45px;
+            height:45px;
+            position:fixed;
+            right:50px;
+            bottom:50px;
+            color:#fff;
+            text-align:center;
+            /* padding:10px; */
+            background-color: #333;
+            font-size:14px;
+            display:none;
+
+        }
+    </style>
+</head>
+<body>
+    <div>内容1</div>
+    <div>内容2</div>
+    <div>内容3</div>
+    <div>内容4</div>
+    <div>内容5</div>
+    <div>内容6</div>
+
+    <button id="backToTop">回到顶部</button>
+    <script>
+        var btn = document.getElementById('backToTop');
+        // 超过一个屏幕的高度滚动的时候，就让他显示
+        var clientHeight = document.documentElement.clientHeight;
+        window.onscroll = function(){
+            // 获取滚动高度
+            var scrollTop = document.documentElement.scrollTop;
+            if(scrollTop > clientHeight){
+                btn.style.display = 'block';
+            }else{
+                btn.style.display = 'none';
+            }
+            
+        }
+        btn.onclick = function(){
+                document.documentElement.scrollTop = 0;
+            }
+    </script>
+</body>
+</html>
