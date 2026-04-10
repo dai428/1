@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        // var timer = null;
+        // function debounce(){
+        //     if(timer){
+        //         clearTimeout(timer);
+        //     }
+        //     timer = setTimeout(function(){
+        //         var scrollTop = document.documentElement.scrollTop;
+        //         console.log(scrollTop);
+        //     },300)
+        // }
+        // window.onscroll = function(){
+        //     debounce();
+        // }
+
+        function debounce(fn,delay){
+            var timer = null;
+            return function(){
+                if(timer){
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(fn,delay);
+            }
+            
+        }
+        function backTop(){
+                var scrollTop = document.documentElement.scrollTop;
+                console.log(scrollTop);
+            }
+            window.onscroll = debounce(backTop,300);
+    </script>
+</body>
+</html>
